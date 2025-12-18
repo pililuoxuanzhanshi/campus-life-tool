@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园生活服务助手</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎓</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <!-- 头部 -->
+        <header class="header">
+            <h1><i class="fas fa-university"></i> 校园生活服务助手</h1>
+            <p class="subtitle">轻量化一站式校园服务平台</p>
+        </header>
+
+        <!-- 导航栏 -->
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="notice"><i class="fas fa-bullhorn"></i> 校园通知</button>
+            <button class="tab-btn" data-tab="lost"><i class="fas fa-search"></i> 失物招领</button>
+            <button class="tab-btn" data-tab="trade"><i class="fas fa-exchange-alt"></i> 二手交易</button>
+            <button class="tab-btn" data-tab="schedule"><i class="fas fa-calendar-alt"></i> 课表查询</button>
+        </nav>
+
+        <!-- 内容区域 -->
+        <main class="content">
+            <!-- 校园通知模块 -->
+            <section id="notice" class="tab-content active">
+                <div class="module-header">
+                    <h2><i class="fas fa-bullhorn"></i> 校园通知</h2>
+                    <button class="add-btn" onclick="addNotice()"><i class="fas fa-plus"></i> 发布通知</button>
+                </div>
+                <div class="notice-list" id="noticeList">
+                    <!-- 通知内容通过JS动态生成 -->
+                </div>
+            </section>
+
+            <!-- 失物招领模块 -->
+            <section id="lost" class="tab-content">
+                <div class="module-header">
+                    <h2><i class="fas fa-search"></i> 失物招领</h2>
+                    <button class="add-btn" onclick="addLostItem()"><i class="fas fa-plus"></i> 发布信息</button>
+                </div>
+                <div class="items-container" id="lostItems">
+                    <!-- 失物招领内容通过JS动态生成 -->
+                </div>
+            </section>
+
+            <!-- 二手交易模块 -->
+            <section id="trade" class="tab-content">
+                <div class="module-header">
+                    <h2><i class="fas fa-exchange-alt"></i> 二手交易</h2>
+                    <button class="add-btn" onclick="addTradeItem()"><i class="fas fa-plus"></i> 发布商品</button>
+                </div>
+                <div class="items-container" id="tradeItems">
+                    <!-- 二手交易内容通过JS动态生成 -->
+                </div>
+            </section>
+
+            <!-- 课表查询模块 -->
+            <section id="schedule" class="tab-content">
+                <div class="module-header">
+                    <h2><i class="fas fa-calendar-alt"></i> 课表查询</h2>
+                    <button class="add-btn" onclick="addCourse()"><i class="fas fa-plus"></i> 添加课程</button>
+                </div>
+                <div class="schedule-container">
+                    <div class="weekdays">
+                        <div class="day">周一</div>
+                        <div class="day">周二</div>
+                        <div class="day">周三</div>
+                        <div class="day">周四</div>
+                        <div class="day">周五</div>
+                    </div>
+                    <div class="time-slots">
+                        <div class="time">8:00-9:40</div>
+                        <div class="time">10:00-11:40</div>
+                        <div class="time">14:00-15:40</div>
+                        <div class="time">16:00-17:40</div>
+                        <div class="time">19:00-20:40</div>
+                    </div>
+                    <div class="schedule-grid" id="scheduleGrid">
+                        <!-- 课程表通过JS动态生成 -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <p>© 2024 校园生活服务助手 | 使用HTML5 + CSS3 + JavaScript构建</p>
+            <p class="deploy-info">
+                <i class="fas fa-globe"></i> 项目地址: 
+                <span id="projectUrl">上传到GitHub Pages后显示网址</span>
+                <button class="copy-btn" onclick="copyUrl()"><i class="far fa-copy"></i> 复制</button>
+            </p>
+        </footer>
+    </div>
+
+    <!-- 模态框（用于添加内容） -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h3 id="modalTitle">添加内容</h3>
+            <form id="modalForm">
+                <!-- 表单内容通过JS动态生成 -->
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
